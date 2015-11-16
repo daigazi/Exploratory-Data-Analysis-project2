@@ -1,0 +1,16 @@
+{
+    "contents" : "source(\"load_data.R\")\nlibrary(plyr)\nMaryland=NEI[NEI$fips==\"24510\",] # maryland city data\ntmp=ddply(.data = Maryland,.variables = .(year),summarize,Emi=sum(Emissions))\npng(filename = \"plot2.png\",width = 480,height = 480,units = \"px\" )\nplot(tmp,type=\"l\",xlab=\"Year\",\n     main=\"Total Emissions in the maryland from 1999 to 2008\",\n     ylab = expression('Total PM'[2.5]*\" Emission\"))\ndev.off()\n",
+    "created" : 1447656340499.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1537798730",
+    "id" : "90D87DBE",
+    "lastKnownWriteTime" : 1447657479,
+    "path" : "D:/Git/ExData_Plotting2/plot2.R",
+    "project_path" : "plot2.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

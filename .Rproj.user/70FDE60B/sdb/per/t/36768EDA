@@ -1,0 +1,16 @@
+{
+    "contents" : "source(\"load_data.R\")\nlibrary(plyr)\nlibrary(ggplot2)\n\nsubset <- NEI[NEI$fips == \"24510\"|NEI$fips == \"06037\", ]\n\nmotor <- grep(\"motor\", SCC$Short.Name, ignore.case = T)\ntemp=SCC[motor ,]\ntemp = subset[subset$SCC %in% temp$SCC, ]\n\npng(filename = \"plot6.png\",width = 480,height = 480,units = \"px\" )\ng <- ggplot(temp, aes(year, Emissions, color = fips))\ng1=g + geom_line(stat = \"summary\", fun.y = \"sum\") +\n        ylab(expression('Total PM'[2.5]*\" Emissions\")) +\n        ggtitle(\"Comparison of Total Emissions From Motor\\n Vehicle Sources in Baltimore City\\n and Los Angeles County from 1999 to 2008\") +\n        scale_colour_discrete(name = \"Group\", label = c(\"Los Angeles\",\"Baltimore\"))\nprint(g1)\ndev.off()\n\n",
+    "created" : 1447658697407.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "536201762",
+    "id" : "36768EDA",
+    "lastKnownWriteTime" : 1447661638,
+    "path" : "D:/Git/ExData_Plotting2/plot6.R",
+    "project_path" : "plot6.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "source(\"load_data.R\")\nlibrary(plyr)\nmotor <- grep(\"motor\", SCC$Short.Name, ignore.case = T)\ntemp=SCC[motor ,]\ntemp = NEI[NEI$SCC %in% temp$SCC, ]\n#temp=merge(x=temp,y=NEI,by.x = \"SCC\",by.y = \"SCC\",all.x = T)\ntmp1=ddply(.data = temp,.variables = .(year),summarize,Emi=sum(Emissions))\npng(filename = \"plot5.png\",width = 480,height = 480,units = \"px\" )\nplot(tmp1, type = \"l\", xlab = \"Year\", \n     main = \"Total Emissions From Coal Combustion-related\\n Sources from 1999 to 2008\", \n     ylab = expression('Total PM'[2.5]*\" Emission\"))\ndev.off()\n\n\n\n",
+    "created" : 1447658623550.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3036292310",
+    "id" : "D1F94F20",
+    "lastKnownWriteTime" : 1447658695,
+    "path" : "D:/Git/ExData_Plotting2/plot5.R",
+    "project_path" : "plot5.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

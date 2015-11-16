@@ -1,0 +1,16 @@
+{
+    "contents" : "source(\"load_data.R\")\nlibrary(plyr)\ntmp=ddply(.data = NEI,.variables = .(year),summarize,Emi=sum(Emissions))\n#tmp=tapply(NEI$Emissions,NEI$year,sum)\npng(filename = \"plot1.png\",width = 480,height = 480,units = \"px\" )\nplot(tmp,type=\"l\",xlab=\"Year\",\n     main=\"Total Emissions in the United States from 1999 to 2008\",\n     ylab = expression('Total PM'[2.5]*\" Emission\"))\ndev.off()",
+    "created" : 1447655866829.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "557531899",
+    "id" : "A922EAAC",
+    "lastKnownWriteTime" : 1447656636,
+    "path" : "D:/Git/ExData_Plotting2/plot1.R",
+    "project_path" : "plot1.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

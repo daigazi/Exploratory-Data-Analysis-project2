@@ -1,0 +1,16 @@
+{
+    "contents" : "# unzip file to exdir \nunzip(\"./data/exdata-data-NEI_data.zip\",exdir = \"./data\")\n# Check if both data exist. If not, load the data.\nif (!\"NEI\" %in% ls()) {\n    NEI<- readRDS(\"./data/summarySCC_PM25.rds\")\n}\nif (!\"sccData\" %in% ls()) {\n    SCC <- readRDS(\"./data/Source_Classification_Code.rds\")\n}\nhead(NEI)\nhead(SCC)\ndim(NEI) \ndim(SCC) \n\n",
+    "created" : 1447655208724.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1963651572",
+    "id" : "AB4AAE00",
+    "lastKnownWriteTime" : 1447655862,
+    "path" : "D:/Git/ExData_Plotting2/load_data.R",
+    "project_path" : "load_data.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
